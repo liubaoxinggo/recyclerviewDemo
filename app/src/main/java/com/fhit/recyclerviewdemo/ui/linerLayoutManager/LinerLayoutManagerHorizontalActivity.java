@@ -1,4 +1,4 @@
-package com.fhit.recyclerviewdemo.ui.LinerLayoutManager;
+package com.fhit.recyclerviewdemo.ui.linerLayoutManager;
 
 import android.app.Activity;
 import android.os.Bundle;

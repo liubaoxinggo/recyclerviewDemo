@@ -1,4 +1,4 @@
-package com.fhit.recyclerviewdemo.ui.GridLayoutManager;
+package com.fhit.recyclerviewdemo.ui.gridLayoutManager;
 
 import android.app.Activity;
 import android.os.Bundle;

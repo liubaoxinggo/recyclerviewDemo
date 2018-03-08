@@ -19,12 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LinerLayoutManager.LinerLayoutManagerVerticalActivity" />
-        <activity android:name=".ui.LinerLayoutManager.LinerLayoutManagerHorizontalActivity" />
-        <activity android:name=".ui.GridLayoutManager.GridLayoutActivity" />
-        <activity android:name=".ui.StaggeredGridLayoutManager.StaggeredGridLayoutManagerActivity" />
-        <activity android:name=".ui.RefreshLayout.RefreshRecyclerViewActivity" />
-        <activity android:name=".ui.RefreshLayout.SwipeRecyclerViewActivity"></activity>
+        <activity android:name=".ui.linerLayoutManager.LinerLayoutManagerVerticalActivity" />
+        <activity android:name=".ui.linerLayoutManager.LinerLayoutManagerHorizontalActivity" />
+        <activity android:name=".ui.gridLayoutManager.GridLayoutActivity" />
+        <activity android:name=".ui.staggeredGridLayoutManager.StaggeredGridLayoutManagerActivity" />
+        <activity android:name=".ui.refreshLayout.RefreshRecyclerViewActivity" />
+        <activity android:name=".ui.refreshLayout.SwipeRecyclerViewActivity" />
+        <activity android:name=".ui.gridLayoutManager.IrregularGridLayoutActivity"></activity>
     </application>
 
 </manifest>

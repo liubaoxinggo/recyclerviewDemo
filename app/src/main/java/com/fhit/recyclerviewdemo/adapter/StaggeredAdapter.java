@@ -7,20 +7,25 @@ import android.view.ViewGroup;
 
 import com.fhit.recyclerviewdemo.R;
 import com.fhit.recyclerviewdemo.adapter.ViewHolder.SViewHolder;
+import com.fhit.recyclerviewdemo.bean.Person;
+
+import java.util.ArrayList;
 
 /**
  * Created by liubaoxing on 2018/3/7 16:58<br/>
  * Email:liubaoxinggo@foxmail.com<br/>
  */
 
-public class StaggeredAdapter extends RecyclerView.Adapter<SViewHolder> {
+public class StaggeredAdapter extends RecyclerBaseAdapter<Person> {
 
-    public StaggeredAdapter() {
+
+    public StaggeredAdapter(ArrayList<Person> datas) {
+        super(datas);
     }
 
     @Override
     public SViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = null;
+        View v ;
         if(viewType == 1){
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.staggered_item_1,parent,false);
         }else if(viewType == 2){
@@ -38,12 +43,10 @@ public class StaggeredAdapter extends RecyclerView.Adapter<SViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(SViewHolder holder, int position) {
-        holder.tvIndex.setText(String.valueOf(position));
+    public void onBindViewHolder(RecyclerView.ViewHolder mHolder, int position) {
+        SViewHolder holder = (SViewHolder)mHolder;
+        holder.tvIndex.setText(String.valueOf(getDatas().get(position).getAge()));
     }
 
-    @Override
-    public int getItemCount() {
-        return 25;
-    }
+
 }

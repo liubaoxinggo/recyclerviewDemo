@@ -1,4 +1,4 @@
-package com.fhit.recyclerviewdemo.ui.RefreshLayout;
+package com.fhit.recyclerviewdemo.ui.refreshLayout;
 
 import android.app.Activity;
 import android.os.Bundle;

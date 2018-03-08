@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.fhit.recyclerviewdemo.R;
-import com.fhit.recyclerviewdemo.ui.GridLayoutManager.GridLayoutActivity;
-import com.fhit.recyclerviewdemo.ui.LinerLayoutManager.LinerLayoutManagerHorizontalActivity;
-import com.fhit.recyclerviewdemo.ui.LinerLayoutManager.LinerLayoutManagerVerticalActivity;
-import com.fhit.recyclerviewdemo.ui.RefreshLayout.RefreshRecyclerViewActivity;
-import com.fhit.recyclerviewdemo.ui.RefreshLayout.SwipeRecyclerViewActivity;
-import com.fhit.recyclerviewdemo.ui.StaggeredGridLayoutManager.StaggeredGridLayoutManagerActivity;
+import com.fhit.recyclerviewdemo.ui.gridLayoutManager.GridLayoutActivity;
+import com.fhit.recyclerviewdemo.ui.gridLayoutManager.IrregularGridLayoutActivity;
+import com.fhit.recyclerviewdemo.ui.linerLayoutManager.LinerLayoutManagerHorizontalActivity;
+import com.fhit.recyclerviewdemo.ui.linerLayoutManager.LinerLayoutManagerVerticalActivity;
+import com.fhit.recyclerviewdemo.ui.refreshLayout.RefreshRecyclerViewActivity;
+import com.fhit.recyclerviewdemo.ui.refreshLayout.SwipeRecyclerViewActivity;
+import com.fhit.recyclerviewdemo.ui.staggeredGridLayoutManager.StaggeredGridLayoutManagerActivity;
 
 public class MainActivity extends Activity {
 
@@ -54,6 +55,12 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SwipeRecyclerViewActivity.class));
+            }
+        });
+        findViewById(R.id.irregular_gridLayout_manager).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, IrregularGridLayoutActivity.class));
             }
         });
     }

@@ -3,6 +3,7 @@ package com.fhit.recyclerviewdemo.custom;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.fhit.recyclerviewdemo.adapter.RecyclerBaseAdapter;
@@ -20,7 +21,7 @@ import java.util.Collections;
 
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
-    RecyclerBaseAdapter adapter;
+    private RecyclerBaseAdapter adapter;
 
     public SimpleItemTouchHelperCallback(RecyclerBaseAdapter adapter) {
         this.adapter = adapter;
@@ -34,11 +35,12 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
      */
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        int dragFlags = 0;
-        int swipeFlags = 0;
+        int dragFlags ;
+        int swipeFlags ;
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
         //注意这里的判断，一定要先判断layoutManager是否为GridLayoutManager，因为GridLayoutManager是LinearLayoutManager的子类
-        if(layoutManager instanceof GridLayoutManager){//网格布局，不能滑动，只能上下左右拖动
+        if(layoutManager instanceof GridLayoutManager
+                || layoutManager instanceof StaggeredGridLayoutManager){//网格布局，不能滑动，只能上下左右拖动
             dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
             swipeFlags = 0;
         }else{
