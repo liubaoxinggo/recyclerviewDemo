@@ -9,6 +9,8 @@ import com.fhit.recyclerviewdemo.R;
 import com.fhit.recyclerviewdemo.ui.GridLayoutManager.GridLayoutActivity;
 import com.fhit.recyclerviewdemo.ui.LinerLayoutManager.LinerLayoutManagerHorizontalActivity;
 import com.fhit.recyclerviewdemo.ui.LinerLayoutManager.LinerLayoutManagerVerticalActivity;
+import com.fhit.recyclerviewdemo.ui.RefreshLayout.RefreshRecyclerViewActivity;
+import com.fhit.recyclerviewdemo.ui.RefreshLayout.SwipeRecyclerViewActivity;
 import com.fhit.recyclerviewdemo.ui.StaggeredGridLayoutManager.StaggeredGridLayoutManagerActivity;
 
 public class MainActivity extends Activity {
@@ -40,6 +42,18 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, StaggeredGridLayoutManagerActivity.class));
+            }
+        });
+        findViewById(R.id.swipe_refresh_layout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RefreshRecyclerViewActivity.class));
+            }
+        });
+        findViewById(R.id.swipe_refresh_recycler_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SwipeRecyclerViewActivity.class));
             }
         });
     }

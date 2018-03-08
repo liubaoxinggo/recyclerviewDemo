@@ -2,9 +2,11 @@ package com.fhit.recyclerviewdemo.ui.LinerLayoutManager;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,6 +14,7 @@ import com.fhit.recyclerviewdemo.R;
 import com.fhit.recyclerviewdemo.adapter.MyAdapter01;
 import com.fhit.recyclerviewdemo.bean.Person;
 import com.fhit.recyclerviewdemo.custom.MDividerItemDecoration;
+import com.fhit.recyclerviewdemo.custom.SimpleItemTouchHelperCallback;
 import com.fhit.recyclerviewdemo.util.LogUtils;
 
 import java.util.ArrayList;
@@ -49,6 +52,11 @@ public class LinerLayoutManagerVerticalActivity extends Activity implements MyAd
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         //设置适配器
         mRecyclerView.setAdapter(adapter);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SimpleItemTouchHelperCallback(adapter));
+
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
+
 
     }
     boolean flag = true;

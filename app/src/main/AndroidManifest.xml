@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fhit.recyclerviewdemo">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name=".TApp"
         android:allowBackup="true"
@@ -20,7 +22,9 @@
         <activity android:name=".ui.LinerLayoutManager.LinerLayoutManagerVerticalActivity" />
         <activity android:name=".ui.LinerLayoutManager.LinerLayoutManagerHorizontalActivity" />
         <activity android:name=".ui.GridLayoutManager.GridLayoutActivity" />
-        <activity android:name=".ui.StaggeredGridLayoutManager.StaggeredGridLayoutManagerActivity"></activity>
+        <activity android:name=".ui.StaggeredGridLayoutManager.StaggeredGridLayoutManagerActivity" />
+        <activity android:name=".ui.RefreshLayout.RefreshRecyclerViewActivity" />
+        <activity android:name=".ui.RefreshLayout.SwipeRecyclerViewActivity"></activity>
     </application>
 
 </manifest>

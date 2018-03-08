@@ -16,14 +16,12 @@ import java.util.ArrayList;
  * Email:liubaoxinggo@foxmail.com<br/>
  */
 
-public class MyAdapter01 extends RecyclerView.Adapter<MViewHolder> {
-
-    private ArrayList<Person> persons;
+public class MyAdapter01 extends RecyclerBaseAdapter<Person> {
 
     private OnItemClickListener onItemClickListener;
 
-    public MyAdapter01(ArrayList<Person> persons) {
-        this.persons = persons;
+    public MyAdapter01(ArrayList<Person> datas) {
+        super(datas);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -39,15 +37,20 @@ public class MyAdapter01 extends RecyclerView.Adapter<MViewHolder> {
         return viewHolder;
     }
 
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        super.onBindViewHolder(holder, position);
+        onBindViewHolder((MViewHolder)holder,position);
+    }
+
     /**
      * 数据绑定
      * @param holder
      * @param position
      */
-    @Override
     public void onBindViewHolder(final MViewHolder holder, int position) {
-        holder.tvName.setText(persons.get(position).getName());
-        holder.tvAge.setText(String.valueOf(persons.get(position).getAge()));
+        holder.tvName.setText(getDatas().get(position).getName());
+        holder.tvAge.setText(String.valueOf(getDatas().get(position).getAge()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +74,7 @@ public class MyAdapter01 extends RecyclerView.Adapter<MViewHolder> {
 
     @Override
     public int getItemCount() {
-        return persons == null ? 0 : persons.size();
+        return getDatas() == null ? 0 : getDatas().size();
     }
 
     /**
@@ -79,10 +82,10 @@ public class MyAdapter01 extends RecyclerView.Adapter<MViewHolder> {
      * @param p
      */
     public void addNewItem(Person p){
-        if(persons == null){
-            persons = new ArrayList<>();
+        if(getDatas() == null){
+            setDatas(new ArrayList<Person>());
         }
-        persons.add(0,p);
+        getDatas().add(0,p);
         notifyItemInserted(0);
     }
 
@@ -91,10 +94,10 @@ public class MyAdapter01 extends RecyclerView.Adapter<MViewHolder> {
      * @param position
      */
     public void deleteItem(int position){
-        if(persons == null || persons.isEmpty()){
+        if(getDatas() == null || getDatas().isEmpty()){
             return;
         }
-        persons.remove(position);
+        getDatas().remove(position);
         notifyItemRemoved(position);
     }
     public interface OnItemClickListener{
