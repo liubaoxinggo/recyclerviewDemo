@@ -38,4 +38,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="swipe_refresh_recycler_view[封装]"/>
+    <Button
+        android:id="@+id/swipe_item_menu_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="swipe_item_menu_view[item 侧滑菜单]"/>
 </LinearLayout>

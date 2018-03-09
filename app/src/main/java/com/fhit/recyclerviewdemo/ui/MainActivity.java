@@ -13,6 +13,7 @@ import com.fhit.recyclerviewdemo.ui.linerLayoutManager.LinerLayoutManagerVertica
 import com.fhit.recyclerviewdemo.ui.refreshLayout.RefreshRecyclerViewActivity;
 import com.fhit.recyclerviewdemo.ui.refreshLayout.SwipeRecyclerViewActivity;
 import com.fhit.recyclerviewdemo.ui.staggeredGridLayoutManager.StaggeredGridLayoutManagerActivity;
+import com.fhit.recyclerviewdemo.ui.swipeItemMenu.SwipeItemMenuLayoutActivity;
 
 public class MainActivity extends Activity {
 
@@ -63,5 +64,12 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, IrregularGridLayoutActivity.class));
             }
         });
+        findViewById(R.id.swipe_item_menu_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SwipeItemMenuLayoutActivity.class));
+            }
+        });
+
     }
 }

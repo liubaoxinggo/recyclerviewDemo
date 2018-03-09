@@ -25,7 +25,8 @@
         <activity android:name=".ui.staggeredGridLayoutManager.StaggeredGridLayoutManagerActivity" />
         <activity android:name=".ui.refreshLayout.RefreshRecyclerViewActivity" />
         <activity android:name=".ui.refreshLayout.SwipeRecyclerViewActivity" />
-        <activity android:name=".ui.gridLayoutManager.IrregularGridLayoutActivity"></activity>
+        <activity android:name=".ui.gridLayoutManager.IrregularGridLayoutActivity" />
+        <activity android:name=".ui.swipeItemMenu.SwipeItemMenuLayoutActivity"></activity>
     </application>
 
 </manifest>

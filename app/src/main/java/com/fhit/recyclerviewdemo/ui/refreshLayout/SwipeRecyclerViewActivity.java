@@ -15,6 +15,7 @@ import com.fhit.swiperefreshrecyclerview.footerView.SimpleFooterView;
 import java.util.ArrayList;
 
 /**
+ * 下拉刷新 上拉加载更多
  * http://www.jcodecraeer.com/a/anzhuokaifa/2016/1107/6753.html
  */
 public class SwipeRecyclerViewActivity extends Activity {

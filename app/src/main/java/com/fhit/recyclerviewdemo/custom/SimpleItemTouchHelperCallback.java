@@ -91,7 +91,6 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
         if(adapter.getDatas() == null || adapter.getDatas().size() == 0)return;
         int position = viewHolder.getAdapterPosition();
-        LogUtils.d("===onSwiped===position = "+position);
         adapter.getDatas().remove(position);
         adapter.notifyItemRemoved(position);
         //adapter.notifyDataSetChanged();//加上这句 解决‘ 删除item后加载刷新item时，有时item布局为空’的问题，具体原因不明
