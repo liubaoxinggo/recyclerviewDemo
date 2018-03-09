@@ -23,6 +23,10 @@ public abstract class QuickAdapter<T> extends RecyclerView.Adapter<QuickAdapter.
         this.mDatas = mDatas;
     }
 
+    public List<T> getDatas() {
+        return mDatas;
+    }
+
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }

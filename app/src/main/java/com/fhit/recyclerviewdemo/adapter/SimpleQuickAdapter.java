@@ -29,6 +29,7 @@ public class SimpleQuickAdapter extends QuickAdapter<Person> {
             opendItemWithMenuLayouts = new ArrayList<>();
         }
         opendItemWithMenuLayouts.add(itemWithMenuLayout);
+        LogUtils.d("打开menu的item的数目为："+opendItemWithMenuLayouts.size(),"itemWithMenuLayout.hashCode = "+itemWithMenuLayout.hashCode());
     }
 
     public void closeOpenMenu(){
@@ -39,7 +40,9 @@ public class SimpleQuickAdapter extends QuickAdapter<Person> {
                     im.closeMenu();
                 }
             }
+            LogUtils.d("调用关闭menu时item的数目为:"+opendItemWithMenuLayouts.size());
             opendItemWithMenuLayouts.clear();
+
         }
     }
     @Override

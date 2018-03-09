@@ -55,22 +55,25 @@ public class ItemWithMenuLayout extends HorizontalScrollView {
         switch (ev.getAction()){
             case MotionEvent.ACTION_DOWN://content 设置了 OnClickListener，这里就不会执行了
                 downTime = System.currentTimeMillis();
-                LogUtils.d("====ACTION_DOWN======");
                 closeOpenMenu();//关闭上一次打开的menu
                 break;
             case MotionEvent.ACTION_UP:
-                int scrollX = getScrollX();
-                if(System.currentTimeMillis() - downTime <= 100 && scrollX == 0){
-                    if(mCustomOnClickListener != null){
-                        mCustomOnClickListener.onClick();
+                if(!isOpen){//当前item的menu还没有打开
+                    int scrollX = getScrollX();
+                    if(System.currentTimeMillis() - downTime <= 100 && scrollX == 0){
+                        if(mCustomOnClickListener != null){
+                            mCustomOnClickListener.onClick();
+                        }
+                        return false;
                     }
-                    return false;
-                }
-                if(Math.abs(scrollX) > mMenuWidth / 2){
-                    this.smoothScrollTo(mMenuWidth,0);
-                    onOpenMenu();//当打开菜单时记录此view，方便下次关闭
-                }else{
-                    this.smoothScrollTo(0,0);
+                    if(Math.abs(scrollX) > mMenuWidth / 2){
+                        this.smoothScrollTo(mMenuWidth,0);
+                        onOpenMenu();//当打开菜单时记录此view，方便下次关闭
+                    }else{
+                        this.smoothScrollTo(0,0);
+                    }
+                }else{//当前item的menu已经打开了 就将其关闭
+                    getAdapter().closeOpenMenu();
                 }
                 return false;
         }

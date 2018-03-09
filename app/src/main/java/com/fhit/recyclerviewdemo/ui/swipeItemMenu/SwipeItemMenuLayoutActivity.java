@@ -52,6 +52,11 @@ public class SwipeItemMenuLayoutActivity extends Activity {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         //设置适配器
         mRecyclerView.setAdapter(adapter);
+
+//        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SimpleItemTouchHelperCallback(adapter));
+//
+//        itemTouchHelper.attachToRecyclerView(mRecyclerView);
+
     }
 
     private ArrayList<Person> getData(){
